@@ -29,7 +29,7 @@ class VaccineAdapter(val itemList: ArrayList<VaccineModel>): RecyclerView.Adapte
     }
 
     override fun onBindViewHolder(holder: MyViewHOlder, position: Int) {
-        holder.vaccineTitle.setText(itemList[position].name)
+        holder.vaccineTitle.text = itemList[position].name
         holder.vaccineImage.setImageResource(itemList[position].img)
     }
 }
