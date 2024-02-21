@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class VaccineAdapter(val itemList: ArrayList<VaccineModel>): RecyclerView.Adapter<VaccineAdapter.MyViewHOlder>() {
@@ -16,6 +17,10 @@ class VaccineAdapter(val itemList: ArrayList<VaccineModel>): RecyclerView.Adapte
         init{
             vaccineImage = itemView.findViewById(R.id.image)
             vaccineTitle = itemView.findViewById(R.id.txt1)
+
+            itemView.setOnClickListener(){
+                Toast.makeText(itemView.context, "You chose: ${itemList[adapterPosition].name}", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
